@@ -19,13 +19,13 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let descripcion;
     if (move > 0) {
-      descripcion = "Go to move #" + move;
+      descripcion = "You are at move #" + move; 
     } else {
-      descripcion = "Go to game start";
+      descripcion = "Game start";
     }
     return (
       <li key={move}>
-        <button onClick={(() => jumpTo(move))}>{descripcion}</button>
+        <a onClick={(() => jumpTo(move))}>{descripcion}</a>
       </li>
     );
   });
@@ -36,7 +36,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay}/>
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ul className="moves-list">{moves}</ul>
       </div>
     </div>
   )

@@ -91,3 +91,7 @@ body {
   margin-left: 20px;
   color: white;
 }
+
+.moves-list {
+  list-style-type: none;
+}
